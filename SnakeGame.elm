@@ -1,14 +1,14 @@
-module Game where
+module SnakeGame where
 
 import Color exposing (..)
 import Graphics.Collage exposing (..)
 import Graphics.Element exposing (..)
+import Time exposing (..)
+import Random exposing (Seed, int, initialSeed, generate)
 import Keyboard
 import Text
-import Time exposing (..)
 import Window
 import Debug
-import Random exposing (Seed, int, initialSeed, generate)
 
 -- MODEL
 
@@ -217,24 +217,17 @@ paintSnakeElement index el =
       |> filled (hsla 178 0.3 0.52 alpha)
       |> move (el.x, el.y)
 
-fieldColor =
-  rgb 234 247 196
-
-borderColor =
-  rgb 88 80 79
-
-fruitColor =
-  rgb 236 100 88
-
-textColor =
-  rgb 90 120 127
-
 txt f string =
   Text.fromString string
     |> Text.color textColor
     |> Text.monospace
     |> f
     |> leftAligned
+
+fieldColor = rgb 234 247 196
+borderColor = rgb 88 80 79
+fruitColor = rgb 236 100 88
+textColor = rgb 90 120 127
 
 -- SIGNALS
 
@@ -255,3 +248,7 @@ input =
         |> Signal.map Coord
         |> Signal.sampleOn delta
     ]
+
+
+main =
+  Signal.map2 view Window.dimensions gameState
