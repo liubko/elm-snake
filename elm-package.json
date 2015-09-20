@@ -1,7 +1,7 @@
 {
     "version": "1.0.0",
     "summary": "A Snake game for the web browser written in Elm",
-    "repository": "https://github.com/liubko/elm-snake",
+    "repository": "https://github.com/liubko/elm-snake.git",
     "license": "BSD3",
     "source-directories": [
         "."
