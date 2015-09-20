@@ -8,3 +8,7 @@ elm-reactor
 ```
 
 And then open [http://localhost:8000/SnakeGame.elm?debug](http://localhost:8000/SnakeGame.elm?debug) to see it in action!
+
+
+## ToDo
+- true random fruits based on time
