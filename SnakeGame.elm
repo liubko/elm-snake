@@ -172,7 +172,7 @@ view (w,h) ({snake, state, fruit} as game) =
     score = ((List.length snake.body) - startLength) * 10
 
     lable = if | state==Lose -> "Your score is " ++ (toString score) ++ ". Press SPACE."
-                | state==NewGame -> "Press SPACE to start, use ARROWS to controll"
+                | state==NewGame -> "Press SPACE to start, use ARROWS to control"
                 | otherwise -> ""
 
     textLabel =
